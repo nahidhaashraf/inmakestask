@@ -1,0 +1,37 @@
+/* styles.css */
+
+/* Apply styles to the dropdown menu */
+.nav-item.dropdown {
+    position: relative;
+}
+
+/* Style for the dropdown container */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    min-width: 160px;
+    border-radius: 5px;
+    padding: 10px 0;
+}
+
+/* Style for dropdown items */
+.dropdown-content a {
+    color: #333;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+/* Change background color on hover */
+.dropdown-content a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Show the dropdown on hover */
+.nav-item.dropdown:hover .dropdown-content {
+    display: block;
+}

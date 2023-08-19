@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- ... Other form fields ... -->
+
+
+ {% if success_message %}
+    <p>{{ success_message }}</p>
+    <a href="{% url 'index' %}">Return to Home Page</a>
+    {% endif %}
+
+<!--<a href="{% url 'index' %}">Return to Home Page</a>-->
+
+<script>
+    // JavaScript code for the dependent dropdown
+    // ...
+</script>
+
+</body>
+</html>

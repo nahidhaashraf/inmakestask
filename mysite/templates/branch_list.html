@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<ul>
+    {% for branch in branches %}
+        <li>
+            District: {{ branch.district }}<br>
+            Wikipedia Link: <a href="{{ branch.wikipedia_link }}">{{ branch.wikipedia_link }}</a>
+        </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

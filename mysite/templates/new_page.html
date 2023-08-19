@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New Page</title>
+</head>
+<body>
+    <h1>Welcome to the New Page</h1>
+    <button id="show-form-button">Show Form</button>
+    <div id="form-container" style="display: none;">
+        <!-- Your form code here -->
+
+
+    <form action="application" method="post">
+      {% csrf_token %}
+
+        <!-- Personal Information -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female" required>
+        <label for="female">Female</label>
+        <br><br>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required><br><br>
+
+        <label for="mail">Mail ID:</label>
+        <input type="email" id="mail" name="mail" required><br><br>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" required></textarea><br><br>
+
+        <label for="district">District:</label>
+        <select id="district" name="district">
+            <option value="district1">Thrissur</option>
+            <option value="district2">Ernakulam</option>
+            <option value="district2">Kollam</option>
+            <option value="district2">Calicut</option>
+            <option value="district2">Kannur</option>
+
+        </select><br><br>
+
+        <!-- Branch (dependent dropdown) -->
+        <label for="branch">Branch:</label>
+        <select id="branch" name="branch">
+            <option value="branch1">Aluva</option>
+            <option value="branch2">Edappally</option>
+            <option value="branch2">Alapad</option>
+            <option value="branch2">Aranattukara</option>
+            <option value="branch2">Payyanur</option>
+            <option value="branch2">Thalassery</option>
+            <option value="branch2">Eravipuram</option>
+            <option value="branch2">Vatakara</option>
+            <option value="branch2">Payyoli</option>
+
+        </select><br><br>
+
+        <!-- Account Type -->
+        <label for="account_type">Account Type:</label>
+        <select id="account_type" name="account_type">
+            <option value="savings">Savings</option>
+            <option value="current">Current</option>
+        </select><br><br>
+
+        <!-- Materials Provided (checkbox) -->
+        <label>Materials Provided:</label>
+        <input type="checkbox" id="material1" name="material1" value="material1">
+        <label for="material1">Debit card</label>
+        <input type="checkbox" id="material2" name="material2" value="material2">
+        <label for="material2">Credit card</label>
+        <input type="checkbox" id="material3" name="material3" value="material3">
+        <label for="material3">Check book</label>
+        <!-- Add more checkboxes here -->
+        <br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+
+  {% if success_message %}
+    <p>{{ success_message }}</p>
+    <a href="{% url 'index' %}">Return to Home Page</a>
+    {% endif %}
+
+
+
+
+    </div>
+    <script>
+        const showFormButton = document.getElementById('show-form-button');
+        const formContainer = document.getElementById('form-container');
+
+        showFormButton.addEventListener('click', () => {
+            formContainer.style.display = 'block';
+        });
+    </script>
+</body>
+</html>

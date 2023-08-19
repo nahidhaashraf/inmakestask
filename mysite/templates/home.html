@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Banking Website</title>
+</head>
+<body>
+     <nav>
+       <ul>
+         <li><a href="/">Home</a></li>
+         <li class="dropdown">
+           <a href="#" class="dropbtn">Branches</a>
+           <div class="dropdown-content">
+             {% for branch in branches %}
+             <a href="{{ branch.wikipedia_link }}">{{ branch.district}}</a>
+             {% endfor %}
+           </div>
+         </li>
+
+       </ul>
+     </nav>
+<h1>Welcome to our Banking Website</h1>
+
+</body>
+</html>
